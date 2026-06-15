@@ -237,11 +237,12 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
         {[
-          { name: "Lasagna", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Chicken Pie", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Chicken Shawarma", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Snack Platter", icon: <Coffee className="w-6 h-6" /> },
-          { name: "Mix rice", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Surati Locho & Khaman", icon: <Utensils className="w-6 h-6" /> },
+          { name: "14th Feb Restro & Cafe", icon: <Coffee className="w-6 h-6" /> },
+          { name: "Coffee King (Vesu)", icon: <Coffee className="w-6 h-6" /> },
+          { name: "Pav Bhaji @ Piplod", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Bonzai Multicuisine", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Nothing Before Coffee", icon: <Coffee className="w-6 h-6" /> },
         ].map(({ name, icon }) => (
           <SelectButton
             key={name}
@@ -274,14 +275,14 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "The Notebook",
-          "La La Land",
-          "Titanic",
-          "Pride and Prejudice",
-          "Anyone But You",
-          "Past Lives",
-          "Love at First Sight",
-          "Through My Window 3",
+          "Rocky Aur Rani Kii Prem Kahaani",
+          "Teri Baaton Mein Aisa Uljha Jiya",
+          "Satyaprem Ki Katha",
+          "Tu Jhoothi Main Makkaar",
+          "Zara Hatke Zara Bachke",
+          "Auron Mein Kahan Dum Tha",
+          "Do Aur Do Pyaar",
+          "Ishq Vishk Rebound",
           "Something else",
         ].map((movie) => (
           <motion.button
