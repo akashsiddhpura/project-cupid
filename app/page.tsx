@@ -53,6 +53,7 @@ const fadeInUp = {
 
 export default function EnchantingDateProposalApp() {
   const [step, setStep] = useState(0);
+  const [customFood, setCustomFood] = useState("");
   const [answers, setAnswers] = useState<Answers>({
     isAvailable: null,
     date: null,
@@ -235,14 +236,14 @@ export default function EnchantingDateProposalApp() {
       <h2 className="text-4xl sm:text-5xl font-playfair font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-pink-600">
         What shall we feast on, my dear?
       </h2>
-      <div className="grid grid-cols-2 gap-4 md:gap-6 mb-8">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 mb-4">
         {[
-          { name: "Surati Locho & Khaman", icon: <Utensils className="w-6 h-6" /> },
-          { name: "14th Feb Restro & Cafe", icon: <Coffee className="w-6 h-6" /> },
-          { name: "Coffee King (Vesu)", icon: <Coffee className="w-6 h-6" /> },
-          { name: "Pav Bhaji @ Piplod", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Bonzai Multicuisine", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Nothing Before Coffee", icon: <Coffee className="w-6 h-6" /> },
+          { name: "Pizza", icon: <Utensils className="w-6 h-6" /> },
+          { name: "maxican", icon: <Utensils className="w-6 h-6" /> },
+          { name: "burger", icon: <Utensils className="w-6 h-6" /> },
+          { name: "chinese", icon: <Utensils className="w-6 h-6" /> },
+          { name: "South Indian", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Multi Cusion", icon: <Utensils className="w-6 h-6" /> },
         ].map(({ name, icon }) => (
           <SelectButton
             key={name}
@@ -258,9 +259,23 @@ export default function EnchantingDateProposalApp() {
           />
         ))}
       </div>
+      <div className="mb-8">
+        <input
+          type="text"
+          value={customFood}
+          onChange={(e) => setCustomFood(e.target.value)}
+          placeholder="aapki Special Farmaish..."
+          className="w-full px-4 py-3 rounded-lg border-2 border-pink-200 focus:outline-none focus:border-pink-500 text-pink-700 bg-white shadow-sm"
+        />
+      </div>
       <Button
-        onClick={() => setStep(step + 1)}
-        disabled={answers.food.length === 0}
+        onClick={() => {
+          if (customFood.trim() && !answers.food.includes(customFood.trim())) {
+            setAnswers((prev) => ({ ...prev, food: [...prev.food, customFood.trim()] }));
+          }
+          setStep(step + 1);
+        }}
+        disabled={answers.food.length === 0 && !customFood.trim()}
         className="bg-gradient-to-r from-pink-500 to-rose-500 hover:brightness-95 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
       >
         Looks delicious! 🍽️
@@ -275,14 +290,13 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "Rocky Aur Rani Kii Prem Kahaani",
-          "Teri Baaton Mein Aisa Uljha Jiya",
-          "Satyaprem Ki Katha",
-          "Tu Jhoothi Main Makkaar",
-          "Zara Hatke Zara Bachke",
-          "Auron Mein Kahan Dum Tha",
-          "Do Aur Do Pyaar",
-          "Ishq Vishk Rebound",
+          "Haunted Echoes of the Past",
+          "Hai Jawani Toh Ishq Hona Hai",
+          "Peddi",
+          "Main Vaapas Aaunga",
+          "Bharat Bhhagya Viddhaata",
+          "Governor",
+          "Badhu Alright Che",
           "Something else",
         ].map((movie) => (
           <motion.button
