@@ -1,19 +1,109 @@
-# Project Cupid
+# Project Cupid - A Techie Way to Ask Her Out 💻💘
 
-A web application built with Next.js.
+<div align="left">
 
-## Getting Started
+Are you a tech guy? Want to ask her out in a way she’ll never forget? Project Cupid lets you send the cutest, tech-inspired date invite—because who says coding can’t be romantic? 🤨
+</div>
 
-First, run the development server:
+## 📑 Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [💌 How It Works](#-how-it-works)
+- [✨ Features](#-features)
+- [🚀 Installation](#-installation)
+- [📧 Email Setup](#-email-setup)
+- [🌐 Vercel Deployment](#-vercel-deployment)
+- [🎨 Customization](#-customization)
+
+## 💌 How It Works
+
+1. Send her the app link
+2. She follows the interactive steps:
+   - Initial proposal question
+   - Date and time selection
+   - Food preferences
+   - Movie selection
+   - Excitement level
+3. When she completes it:
+   - You'll receive an email with her choices
+   - The response is saved as JSON
+   - You can view it in the admin page
+
+## ✨ Features
+
+- **Interactive Steps**: Guide your date through a series of fun and engaging steps
+- **Date and Time Selection**: Allow your date to choose a convenient time
+- **Food and Movie Choices**: Let your date select their favorite food and movie
+- **Excitement Rating**: Gauge your date's excitement level
+- **Confetti Animation**: Celebrate with a confetti animation when your date accepts
+
+## 🚀 Installation
+
+To get started with the Date Proposal App, follow these steps:
+
+1. Clone the repository:
+```sh
+git clone https://github.com/akashsiddhpura/project-cupid.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project directory:
+```sh
+cd project-cupid
+```
+
+3. Install the dependencies:
+```sh
+npm install
+```
+
+4. Run the development server:
+```sh
+npm run dev
+```
+
+Open your browser and navigate to http://localhost:3000 to see the app in action.
+
+## 📧 Email Setup
+
+To enable email notifications:
+
+1. Go to your Google Account settings
+2. Enable 2-Step Verification
+3. Generate an App Password:
+   - Go to Security > 2-Step Verification > App passwords
+   - Select "Mail" and "Other"
+   - Copy the generated password
+4. Update your `.env.local` file with:
+```env
+EMAIL_USER=your.gmail@gmail.com
+EMAIL_APP_PASSWORD=your_gmail_app_password
+```
+
+## 🌐 Vercel Deployment
+
+1. Push your code to GitHub
+2. Go to [Vercel](https://vercel.com)
+3. Import your GitHub repository
+4. Add Environment Variables in Vercel project settings:
+```env
+EMAIL_USER=your.gmail@gmail.com
+EMAIL_APP_PASSWORD=your_gmail_app_password
+```
+
+## 🎨 Customization
+
+You can customize:
+- Food options in the `food` array
+- Movie choices in the `movies` array
+- Colors in `tailwind.config.ts`
+- Email template in `app/api/send-response/route.ts`
+- Animations and transitions in components
+
+<br><br>
+
+---
+
+<div align="center">
+
+**Made with ❤️ by Aakash**
+
+</div>
