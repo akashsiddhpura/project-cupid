@@ -290,13 +290,13 @@ export default function EnchantingDateProposalApp() {
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "Haunted Echoes of the Past",
-          "Hai Jawani Toh Ishq Hona Hai",
-          "Peddi",
-          "Main Vaapas Aaunga",
-          "Bharat Bhhagya Viddhaata",
-          "Governor",
+          "My Fault",
+          "Cocktail 2",
           "Badhu Alright Che",
+          "Chand Mera Dil",
+          "Hai Jawani Toh Ishq Hona Hai",
+          "Bandar",
+          "Off Campus",
           "Something else",
         ].map((movie) => (
           <motion.button
